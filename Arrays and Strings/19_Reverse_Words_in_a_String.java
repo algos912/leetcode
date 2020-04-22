@@ -20,7 +20,15 @@ class Solution {
         }
         
         // corner case: to handle string input " "
-        return sb.length() == 0 ? "" : sb.substring(0, sb.length() - 1);
+        // return sb.length() == 0 ? "" : sb.substring(0, sb.length() - 1);
+        
+        if (sb.length() == 0) {
+            return "";
+        } else {
+            // remove the last blank space 
+            // note: substring(start, end), end char is excluded!
+            return sb.substring(0, sb.length() - 1);
+        }
         
     }
 }
