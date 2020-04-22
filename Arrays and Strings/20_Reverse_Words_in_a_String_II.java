@@ -29,6 +29,7 @@ public class Solution {
         }
     }
     
+    // in-place reverse for word
     // Reverse each char from start to end
     public static void reverse(char[] s, int start, int end) {
         while (start < end) {
