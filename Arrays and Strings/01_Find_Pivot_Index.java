@@ -5,11 +5,11 @@
 
 class Solution {
     public int pivotIndex(int[] nums) {
-        //check for invalid input    
+        // check for invalid input    
         if(nums == null || nums.length <= 2)
             return -1;
         
-        //find sum of numbers at each index
+        // find sum of numbers at each index
         int len = nums.length;
         int[] sumsAtEachIndex = new int[len];
         for(int i = 0; i < len; i++) {
@@ -19,8 +19,8 @@ class Solution {
                 sumsAtEachIndex[i] = sumsAtEachIndex[i-1] + nums[i];
         }
         
-        //sum to the left = sum at index i - nums[i]
-        //sum to the right = sum at index i - sumLeft - nums[i]
+        // sum to the left = sum at index i - nums[i]
+        // sum to the right = sum at index i - sumLeft - nums[i]
         // at pivot index, sum to the left = sum to the right
         
         int sumLeft = 0;
