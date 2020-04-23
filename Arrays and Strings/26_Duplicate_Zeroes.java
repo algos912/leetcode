@@ -10,10 +10,10 @@ class Solution {
         if(arr == null || arr.length == 0)
             return;
         
-        int k = 0;
-        //1. Solution using additional array to copy the values
+        // 1. Solution using additional array to copy the values
         // SC : O(n), TC: O(n)
         int[] output = new int[arr.length];
+        int k = 0;
         for(int i = 0; i < arr.length && k < arr.length; i++) {
             output[k] = arr[i];
             k++;
@@ -30,6 +30,32 @@ class Solution {
         for(int i = 0; i < arr.length; i++) {
             arr[i] = output[i];
         }
+        
+        // 2. in-place swapping
+        // TC: O(n2), SC : O(1)
+        /*
+        int tmp = 0;
+        int tmp2 = 0;
+        
+        for(int i = 0; i < arr.length; i++) {
+            
+            // if value is zero
+            if (arr[i] == 0 && i+1 < arr.length){
+                tmp = arr[i+1]; //save next value to tmp
+                arr[i+1] = 0; // set next value to zero
+                
+                //move all the remaining values by one place to right
+                for(int j = i+2; j < arr.length; j++) {
+                    tmp2 = arr[j];
+                    arr[j] = tmp;
+                    tmp = tmp2;
+                }
+                //increment i
+                i++;
+            }
+            
+        }
+        */
         
     }
 }
