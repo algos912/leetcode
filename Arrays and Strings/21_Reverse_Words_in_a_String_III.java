@@ -1,6 +1,5 @@
 // https://leetcode.com/explore/learn/card/array-and-string/204/conclusion/1165/
 // Given a string, you need to reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.
-
 // Idea: split string to String array, reverse each word and append each word to String builder.
 class Solution {
     public String reverseWords(String s) {
