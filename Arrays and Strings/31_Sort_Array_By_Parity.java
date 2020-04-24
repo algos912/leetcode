@@ -23,5 +23,26 @@ class Solution {
         }
         return A;
         
+        // sort in-place by quicksort, a standard textbook algorithm.
+        // TC : O(n), SC: O(1)
+        // Error : Time Limit Exceeded
+        /*
+        int i = 0;
+        int j = A.length - 1;
+        int tmp = 0;
+        while(i < j) {
+            if(A[i] % 2 > A[j] % 2) {
+                //swap A[i] and A[j]
+                tmp = A[i];
+                A[i] = A[j];
+                A[j] = tmp;
+            }
+            
+            if(A[i] % 2 == 0) i++;
+            if(A[j] % 2 == 0) j--;
+        }
+        return A;
+        */
+        
     }
 }
