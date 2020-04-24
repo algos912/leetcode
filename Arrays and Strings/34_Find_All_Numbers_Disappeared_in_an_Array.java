@@ -12,9 +12,9 @@ class Solution {
         if(nums == null || nums.length == 0)
             return missingNumbers;
         
+        /*
         // n is from 1 to len
         // Brute Force : TC : O(n2), SC: O(1), Time Limit Exceeded
-        /*
         int found = 0;
         for(int n = 1; n <= nums.length; n++) {
             // check if value of n appears in the input array
@@ -34,6 +34,7 @@ class Solution {
         
         // 2. use a hashMap 
         // TC: O(n), SC: O(n)
+        /*
         int found = 0;
         HashMap<Integer,Integer> numMap = new HashMap<Integer,Integer>();
         for(int i = 0; i < nums.length; i++) {
@@ -47,10 +48,23 @@ class Solution {
             else
                 missingNumbers.add(n);
         }
-        
         //return the list of missing numbers
-        return missingNumbers;
+        //return missingNumbers;
         
+        */
         
+        // 3. using extra array
+        List<Integer> list = new ArrayList<>();
+        boolean[] indexMap = new boolean[nums.length + 1];
+        for(int num: nums) {
+            indexMap[num] = true;
+        }
+
+        for(int i=1; i<= nums.length; i++) {
+            if(!indexMap[i]){
+                list.add(i);
+            }
+        }
+        return list;
     }
 }
