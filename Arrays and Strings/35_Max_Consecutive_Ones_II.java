@@ -5,6 +5,9 @@
 // In other words, you can't store all numbers coming from the stream as it's too large to hold in memory. 
 // Could you solve it efficiently?
 
+// LEETCODE PREMIUM
+// copied solution.. try again..
+
 public class Solution {
     public int findMaxConsecutiveOnes(int[] nums) {
         int res = 0, cur = 0, cnt = 0;
