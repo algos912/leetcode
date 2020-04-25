@@ -14,6 +14,7 @@
  */
 
 // Solution 1 - WRONG ANSWER (Program Creek)
+// https://www.programcreek.com/2014/02/leetcode-intersection-of-two-linked-lists-java/
 /*
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
@@ -74,7 +75,8 @@ public class Solution {
 }
 */
 
-//Solution 2: two pointer
+// Solution 2: two pointer
+// http://codesniper.blogspot.com/2015/04/160-intersection-of-two-linked-lists.html
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         if(headA==null || headB==null) return null;  
