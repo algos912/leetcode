@@ -12,6 +12,9 @@
  *     }
  * }
  */
+
+// Solution 1
+/*
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         
@@ -66,6 +69,31 @@ public class Solution {
         
         //no intersection
         return null;
+        
+    }
+}
+*/
+
+//Solution 2: two pointer
+public class Solution {
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        if(headA==null || headB==null) return null;  
+        
+        ListNode curA=headA;  
+        ListNode curB=headB;  
+        int count=0;  
+        
+        while(count<2 && curA!=curB){  
+            curA=curA.next;  
+            curB=curB.next;  
+            if(curA==null){  
+                curA=headB;  
+                count++;  
+            }  
+            if(curB==null) curB=headA;  
+        }  
+        if(curA==curB) return curA;  
+        return null;  
         
     }
 }
