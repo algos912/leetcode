@@ -13,11 +13,11 @@
 class Solution {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         
-        //define a new fake head
+        //define a new fake head for merged-list
         ListNode head = new ListNode(0);
         ListNode p = head;
         
-        //compare first elements from each list and add smaller one to merged list
+        //compare first elements from each list and add smaller one to merged-list
         ListNode p1 = l1;
         ListNode p2 = l2;
         while(p1 != null && p2 != null) {
