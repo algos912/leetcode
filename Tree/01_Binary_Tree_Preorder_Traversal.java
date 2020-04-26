@@ -19,11 +19,11 @@ class Solution {
         if(root == null)
             return output;
         
-        // add the nodes of three into a stack
+        // add the nodes of tree into a stack
         Stack<TreeNode> stack = new Stack<TreeNode>();
         stack.push(root);
         
-        //preorder = root, left, right
+        //preorder traversal = root, left, right
         while(!stack.empty()){
             TreeNode n = stack.pop();
             output.add(n.val);
@@ -35,6 +35,8 @@ class Solution {
                 stack.push(n.left);
             
         }
+        
+        // return output list
         return output;
         
     }
