@@ -1,4 +1,5 @@
 // https://leetcode.com/explore/learn/card/linked-list/219/classic-problems/1205/
+// https://www.programcreek.com/2014/05/leetcode-reverse-linked-list-java/
 // Reverse a singly linked list.
 // Follow up: A linked list can be reversed either iteratively or recursively. Could you implement both?
 
@@ -10,8 +11,6 @@
  *     ListNode(int x) { val = x; }
  * }
  */
- 
-// https://www.programcreek.com/2014/05/leetcode-reverse-linked-list-java/
  
 class Solution {
     public ListNode reverseList(ListNode head) {
