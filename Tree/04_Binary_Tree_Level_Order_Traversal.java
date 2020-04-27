@@ -10,6 +10,9 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
+
+//IREATIVE SOLUTION
+/*
 class Solution {
     public List<List<Integer>> levelOrder(TreeNode root) {
 		List<List<Integer>> output = new ArrayList<>();
@@ -40,4 +43,35 @@ class Solution {
         // return output list
 		return output;
 	}
+}
+*/
+
+//RECURSIVE SOLUTION
+class Solution {
+    List<List<Integer>> output = new ArrayList<>();
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        // check for invalid inputs
+		if (root == null)
+			return output;
+	    
+        // use a helper function
+        helper(root, 0);
+        
+        // return output list
+		return output;
+	}
+    
+    public void helper(TreeNode root, int level) {
+        if(level == output.size())
+            output.add(new ArrayList<Integer>());
+        
+        //root
+        output.get(level).add(root.val);
+        //child left
+        if(root.left != null)
+            helper(root.left, level+1);
+        //child right
+        if(root.right != null)
+            helper(root.right, level+1);
+    }
 }
