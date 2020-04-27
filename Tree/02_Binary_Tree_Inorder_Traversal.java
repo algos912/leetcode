@@ -11,6 +11,7 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
+/*
 class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> output = new ArrayList<Integer>();
@@ -43,5 +44,25 @@ class Solution {
         // return the output list
         return output;
         
+    }
+}
+*/
+
+// RECURSIVE SOLUTION
+class Solution {
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> output = new ArrayList<Integer>();
+        helper(root, output);
+        return output;   
+    }
+    
+    public void helper(TreeNode root, List<Integer> output) {
+        if(root != null) {
+            if(root.left != null)
+                helper(root.left, output);
+            output.add(root.val);
+            if(root.right != null)
+                helper(root.right, output);
+        }
     }
 }
