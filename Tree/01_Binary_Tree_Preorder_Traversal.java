@@ -11,6 +11,8 @@
  * }
  */
  
+// ITERATIVE SOLUTION
+/*
 class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> output = new ArrayList<Integer>();
@@ -39,5 +41,28 @@ class Solution {
         // return output list
         return output;
         
+    }
+}
+*/
+
+// RECURSIVE SOLUTION
+class Solution {
+    public List<Integer> preorderTraversal(TreeNode root) {
+        List<Integer> output = new ArrayList<Integer>();
+        helper(root, output);
+        return output;   
+    }
+    
+    public void helper(TreeNode root, List<Integer> output) {
+        if(root != null) {
+            //root
+            output.add(root.val);
+            //left
+            if(root.left != null)
+                helper(root.left, output);
+            //right
+            if(root.right != null)
+                helper(root.right, output);
+        }
     }
 }
