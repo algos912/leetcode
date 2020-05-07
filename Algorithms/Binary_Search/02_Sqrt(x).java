@@ -22,9 +22,7 @@ class Solution {
             long sq = mid * mid;
             if (sq == x) {
                 return (int) mid;
-            }
-             
-            if (sq < x) {
+            } else if (sq < x) {
                 lo = mid + 1;
             } else {
                 hi = mid - 1;
