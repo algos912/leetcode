@@ -40,8 +40,9 @@ class Solution {
                     hi = mid - 1;  
             }
         }
+        
         //end condition
-        return hi;
+        return (nums[hi] == target) ? hi : -1;
         
     }
 }
