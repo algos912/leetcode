@@ -16,6 +16,7 @@ class Solution {
         }
         
         // Linear search : TC O(n)
+        /*
         int max = nums[0];
         int index = 0;
         int prev = 0;
@@ -36,6 +37,20 @@ class Solution {
             return nums.length - 1;
         
         return index;
+        */
+        
+        // Binary search : TC O(logn)
+        int start = 0;
+        int end = nums.length - 1;
+        int mid = 0;
+        while(start < end) {
+            mid = start + (end - start)/ 2;
+            if(nums[mid] < nums[mid+1])
+                start = mid + 1;
+            else
+                end = mid;
+        }
+        return start;
         
     }
 }
