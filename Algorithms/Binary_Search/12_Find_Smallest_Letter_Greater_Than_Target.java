@@ -8,25 +8,32 @@ Letters also wrap around. For example, if the target is target = 'z' and letters
 class Solution {
     public char nextGreatestLetter(char[] letters, char target) {
 
+        // linear search
+        /*
         for ( int i = 0; i < letters.length; i++) {
             if(letters[i] > target) {
                 return letters[i];
             }
         }
         return letters[0];
-        
-        // Binary Search
-        /*
-        int low = 0;
-        int high = letters.length - 1;
-        int mid = 0;
-        while(low < high){
-            mid = low + (high - low) / 2;
-            if(letters[mid] > target) high = mid;
-            else low = mid + 1;
-        }
-        return low == letters.length - 1 && letters[low] <= target ? letters[0] : letters[low];
         */
+        
+        // binary search
+        int start = 0;
+        int end = letters.length - 1;
+        int mid = 0;
+        while (start < end) {
+            mid = start + (end - start) / 2;
+            if(letters[mid] > target)
+                end = mid;
+            else
+                start = mid + 1;
+        }
+        // post-processing
+        if (start == letters.length - 1 && letters[start] <= target)
+            return letters[0];
+        else
+            return letters[start];
         
     }
 }
