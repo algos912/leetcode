@@ -20,23 +20,26 @@ The sum of 2 and 7 is 9. Therefore index1 = 1, index2 = 2.
 
 class Solution {
     public int[] twoSum(int[] numbers, int target) {
+        
+        // check for invalid inputs
         if(numbers == null || numbers.length == 0)
             return new int[] {};
         
-        int i = 0;
-        int j = numbers.length - 1;
-        
+        // binary search with two pointer-technique
+        int start = 0;
+        int end = numbers.length - 1;
         int sum = 0;
-        while(i < j) {
-            sum = numbers[i] + numbers[j];
-            
+        while(start < end) {
+            sum = numbers[start] + numbers[end];
             if(sum < target)
-                i++;
+                start++;
             else if(sum > target)
-                j--;
+                end--;
             else
-                return new int[] {i+1, j+1};
+                return new int[] {start+1, end+1};
         }
+        
+        // return empty array if there is no twoSum target
         return new int[] {};
     }
 }
