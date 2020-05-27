@@ -1,4 +1,5 @@
 // https://leetcode.com/explore/learn/card/binary-search/146/more-practices-ii/1042/
+// https://leetcode.com/problems/split-array-largest-sum/discuss/89817/Clear-Explanation%3A-8ms-Binary-Search-Java
 /*
 Given an array which consists of non-negative integers and an integer m, you can split the array into m non-empty continuous subarrays. Write an algorithm to minimize the largest sum among these m subarrays.
 
