@@ -15,33 +15,33 @@
 /*
 class Solution {
     public List<List<Integer>> levelOrder(TreeNode root) {
-		List<List<Integer>> output = new ArrayList<>();
+	List<List<Integer>> output = new ArrayList<>();
         // check for invalid inputs
-		if (root == null)
-			return output;
+	if (root == null)
+		return output;
 	    
         // use a queue to keep track of the level
-		LinkedList<TreeNode> queue = new LinkedList<TreeNode>();
-		queue.add(root);
-		while (!queue.isEmpty()) {
-			int size = queue.size();
-			ArrayList<Integer> level = new ArrayList<Integer>(size);
+	LinkedList<TreeNode> queue = new LinkedList<TreeNode>();
+	queue.add(root);
+	while (!queue.isEmpty()) {
+		int size = queue.size();
+		ArrayList<Integer> level = new ArrayList<Integer>(size);
 
-			for (int i = 0; i < size ; i++) {
-				TreeNode n = queue.remove();
-				level.add(n.val);
+		for (int i = 0; i < size ; i++) {
+			TreeNode n = queue.remove();
+			level.add(n.val);
 
-				if (n.left != null)
-					queue.add(n.left);
-				if (n.right != null)
-					queue.add(n.right);
-			}
-			
-			output.add(level);
+			if (n.left != null)
+				queue.add(n.left);
+			if (n.right != null)
+				queue.add(n.right);
 		}
+			
+		output.add(level);
+	}
         
         // return output list
-		return output;
+	return output;
 	}
 }
 */
@@ -51,14 +51,14 @@ class Solution {
     List<List<Integer>> output = new ArrayList<>();
     public List<List<Integer>> levelOrder(TreeNode root) {
         // check for invalid inputs
-		if (root == null)
-			return output;
+	if (root == null)
+		return output;
 	    
         // use a helper function
         helper(root, 0);
         
         // return output list
-		return output;
+	return output;
 	}
     
     public void helper(TreeNode root, int level) {
