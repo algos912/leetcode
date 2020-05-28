@@ -14,7 +14,7 @@ class Solution {
         int right = nums.length - 1;
         int mid = 0;
         for(int i = 0; i < nums.length; i++) {
-            mid = (left + right) / 2;
+            mid = left + (right - left) / 2;
             if(nums[mid] == target) {
                 return mid;
             } else if (nums[mid] < target) {
