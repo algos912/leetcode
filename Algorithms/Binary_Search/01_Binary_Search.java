@@ -2,6 +2,8 @@
 // Given a sorted (in ascending order) integer array nums of n elements and a target value, write a function to search target in nums. 
 // If target exists, then return its index, otherwise return -1.
 
+// TC : O(log(n))
+// SC : O(1)
 class Solution {
     public int search(int[] nums, int target) {
         
@@ -15,9 +17,9 @@ class Solution {
         int mid = 0;
         for(int i = 0; i < nums.length; i++) {
             mid = left + (right - left) / 2;
-            if(nums[mid] == target) {
+            if(mid < nums.length && nums[mid] == target) {
                 return mid;
-            } else if (nums[mid] < target) {
+            } else if (mid < nums.length && nums[mid] < target) {
                 left = mid + 1;
             } else {
                 right = mid - 1;
