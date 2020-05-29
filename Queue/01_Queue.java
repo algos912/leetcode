@@ -6,7 +6,7 @@ As mentioned, a queue should support two operations: enqueue and dequeue.
 Enqueue appends a new element to the queue while dequeue removes the first element. So we need an index to indicate the starting point.
 */
 
-// "static void main" must be defined in a public class.
+//  "static void main" must be defined in a public class.
 
 class MyQueue {
     // store elements
