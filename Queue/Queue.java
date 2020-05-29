@@ -4,7 +4,7 @@ Implement a Queue (FIFO)
 To implement a queue, we may use a dynamic array and an index pointing to the head of the queue.
 As mentioned, a queue should support two operations: enqueue and dequeue. 
 Enqueue appends a new element to the queue while dequeue removes the first element. So we need an index to indicate the starting point.
-/*
+*/
 
 // "static void main" must be defined in a public class.
 
