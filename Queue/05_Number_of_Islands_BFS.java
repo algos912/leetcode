@@ -74,13 +74,13 @@ class Solution {
             // left
             if(y > 0 && grid[x][y-1] == '1') {
                 grid[x][y-1] = '0';
-                queue.offer(x*n+y-1);
+                queue.offer(x*n + (y-1));
             }
             
             // right
             if(y < n-1 && grid[x][y+1] == '1') {
                 grid[x][y+1] = '0';
-                queue.offer(x*n+y+1);
+                queue.offer(x*n + (y+1));
             }
             
         }
