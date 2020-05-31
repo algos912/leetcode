@@ -5,7 +5,7 @@ class Solution {
     public int numSquares(int n) {
         
         Queue<Integer> queue = new LinkedList<>();
-        Set<Integer> visited = new HashSet<>();
+        HashSet<Integer> visited = new HashSet<>();
         int count = 0;
         
         // add first element to queue
