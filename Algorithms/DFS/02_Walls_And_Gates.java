@@ -27,6 +27,35 @@ After running your function, the 2D grid should be:
   
   class Solution {
     public void wallsAndGates(int[][] rooms) {
-    
+        
+        // check for invalid inputs
+        if(rooms == null || rooms.length == 0 || rooms[0].length == 0) 
+            return;
+        
+        int m = rooms.length;
+        int n = rooms[0].length;
+        for(int i = 0; i < m; i++) {
+            for(int j = 0; j < n; j++) {
+                if(rooms[i][j] == 0)
+                    dfs(i, j, 0, rooms);
+            }
+        }
     }
-  }
+    
+    public void dfs(int i, int j, int count, int[][] rooms) {
+        //invalid cases
+        if(i < 0 || i >= rooms.length || j < 0 || j >= rooms[i].length || rooms[i][j] < count)
+            return;
+        
+        // store the distance count, in the cell of the room
+        rooms[i][j] = count;
+        
+        // traverse the neighboring cells of the current cell
+        dfs(i+1, j, count+1, rooms);
+        dfs(i-1, j, count+1, rooms);
+        dfs(i, j+1, count+1, rooms);
+        dfs(i, j-1, count+1, rooms);
+        
+        
+    }
+}
