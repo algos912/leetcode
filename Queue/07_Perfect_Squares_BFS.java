@@ -14,7 +14,7 @@ class Solution {
         
         while(!queue.isEmpty()) {
             int size = queue.size();
-            for(int s = 0; s < size; s++) {
+            while(size > 0) {
                 int curr = queue.poll();
                 
                 if(curr > n)
@@ -29,6 +29,9 @@ class Solution {
                     queue.add(curr + i * i);
                     visited.add(curr + i * i);
                 }
+                
+                //decrement size
+                size--;
             }
                 
             // increment count
