@@ -1,4 +1,5 @@
 // https://leetcode.com/explore/learn/card/queue-stack/230/usage-stack/1360/
+// https://leetcode.com/problems/min-stack/discuss/49014
 /*
 Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
 
@@ -10,39 +11,30 @@ getMin() -- Retrieve the minimum element in the stack.
 
 class MinStack {
     
-    Stack<Integer> stack1;
-    Stack<Integer> stack2; //for min
-
-    /** initialize your data structure here. */
-    public MinStack() {
-        stack1 = new Stack<>();
-        stack2 = new Stack<>();
-        
-    }
-    
+    int min = Integer.MAX_VALUE;
+    Stack<Integer> stack = new Stack<Integer>();
     public void push(int x) {
-        stack1.push(x);
-        if(stack2.isEmpty()){
-            stack2.push(x);
-        } else {
-            stack2.push(Math.min(stack2.peek(), x));
+        // only push the old minimum value when the current 
+        // minimum value changes after pushing the new value x
+        if(x <= min){          
+            stack.push(min);
+            min=x;
         }
-        
+        stack.push(x);
     }
-    
+
     public void pop() {
-        stack1.pop();
-        stack2.pop();
-        
+        // if pop operation could result in the changing of the current minimum value, 
+        // pop twice and change the current minimum value to the last minimum value.
+        if(stack.pop() == min) min=stack.pop();
     }
-    
+
     public int top() {
-        return stack1.peek();
+        return stack.peek();
     }
-    
+
     public int getMin() {
-        return stack2.peek();
-        
+        return min;
     }
 }
 
