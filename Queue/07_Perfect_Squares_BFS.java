@@ -1,5 +1,6 @@
 // https://leetcode.com/explore/learn/card/queue-stack/231/practical-application-queue/1371/
 // https://leetcode.com/problems/perfect-squares/discuss/165688/BFS-and-DP
+// https://www.youtube.com/watch?v=KaXeidsmvVQ
 // Given a positive integer n, find the least number of perfect square numbers (for example, 1, 4, 9, 16, ...) which sum to n.
 
 class Solution {
