@@ -1,5 +1,6 @@
 // https://leetcode.com/explore/learn/card/data-structure-tree/133/conclusion/994/
 // https://leetcode.com/problems/populating-next-right-pointers-in-each-node/discuss/664070/Java-O(1)-Beats-100-with-commnets
+// https://leetcode.com/problems/populating-next-right-pointers-in-each-node/discuss/663476/Java-Recurisive-2ms-runtime
 
 /*
 You are given a perfect binary tree where all leaves are on the same level, and every parent has two children. The binary tree has the following definition:
@@ -60,6 +61,8 @@ class Node {
 };
 */
 
+// SOLUTION-1
+/*
 class Solution {
     public Node connect(Node root) {
         // cur is parent level node
@@ -86,5 +89,26 @@ class Solution {
         }
         return root;
         
+    }
+}
+*/
+
+// SOLUTION -2 : RECURSION
+class Solution {
+    Node head;
+    public Node connect(Node root) {
+        if(root == null) return root;
+        head = root;
+        traverse(root.left,root.right);
+        return head;
+    }
+    
+    void traverse(Node l, Node r)
+    {
+        if(l == null) return;
+        l.next = r;
+        traverse(l.right,r.left);
+        traverse(l.left,l.right);
+        traverse(r.left,r.right);
     }
 }
