@@ -29,6 +29,7 @@ class MyHashMap {
     /** Initialize your data structure here. */
     public MyHashMap() {
         map = new int[1000005];
+        Arrays.fill(map,-1);
     }
     
     /** value will always be non-negative. */
