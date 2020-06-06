@@ -1,4 +1,5 @@
 // https://leetcode.com/explore/learn/card/hash-table/184/comparison-with-other-data-structures/1117/
+// https://www.programcreek.com/2014/05/leetcode-isomorphic-strings-java/
 
 /*
 Given two strings s and t, determine if they are isomorphic.
@@ -22,6 +23,9 @@ Output: true
 Note:
 You may assume both s and t have the same length.
 */
+
+// TC: O(n)
+// SC: O(n)
 
 class Solution {
     public boolean isIsomorphic(String s, String t) {
