@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/insert-into-a-cyclic-sorted-list/
-// https://www.cnblogs.com/Dylan-Java-NYC/p/10972122.html
+// https://leetcode.com/articles/insert-into-a-cyclic-sorted-list/
 // Given a node from a cyclic linked list which is sorted in ascending order, write a function to insert a value into the list such that it remains a cyclic sorted list. The given node can be a reference to any single node in the list, and may not be necessarily the smallest value in the cyclic list.
 
 /*
@@ -17,37 +17,38 @@ class Node {
 */
 
 class Solution {
-    public Node inesrt(Node head, int insertVal) {
-        // if list is empty
-         if(head == null) {
-            head = new Node(insertVal, null);
-            head.next = head;
-            break;
-        }
-      
-        //find the place for insertVal, in sortedlist
-        Node cur = head;
-        while(cur.next != null) {
-            if(cur.val < cur.next.val) {
-                if(cur.val<=insertVal && insertVal<=cur.next.val){
-                     cur.next = new Node(insertVal, cur.next);
-                     break;
-                 }
-            } else if (cur.val > cur.next.val) {
-                if(cur.val<=insertVal && insertVal<=cur.next.val){
-                     cur.next = new Node(insertVal, cur.next);
-                     break;
-                 }
-            } else {
-                if(cur.next == head) {
-                    cur.next == new Node(inserVal, head);
-                    break;
-                }
-            }
-            cur = cur.next;
-        }
-        
-        //return head of list
-        return head;
+  public Node insert(Node head, int insertVal) {
+    if (head == null) {
+      Node newNode = new Node(insertVal, null);
+      newNode.next = newNode;
+      return newNode;
     }
+
+    Node prev = head;
+    Node curr = head.next;
+    boolean toInsert = false;
+
+    do {
+      if (prev.val <= insertVal && insertVal <= curr.val) {
+        // Case 1).
+        toInsert = true;
+      } else if (prev.val > curr.val) {
+        // Case 2).
+        if (insertVal >= prev.val || insertVal <= curr.val)
+          toInsert = true;
+      }
+
+      if (toInsert) {
+        prev.next = new Node(insertVal, curr);
+        return head;
+      }
+
+      prev = curr;
+      curr = curr.next;
+    } while (prev != head);
+
+    // Case 3).
+    prev.next = new Node(insertVal, curr);
+    return head;
+  }
 }
