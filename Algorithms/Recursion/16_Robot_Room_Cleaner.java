@@ -54,6 +54,24 @@ Assume all four edges of the grid are all surrounded by wall.
 // Time complexity : O(4^N−M), where N is a number of cells in the room and M is a number of obstacles, because for each cell the algorithm checks 4 directions.
 // Space complexity : O(N−M), where N is a number of cells in the room and M is a number of obstacles, to track visited cells.
 
+/**
+ * // This is the robot's control interface.
+ * // You should not implement it, or speculate about its implementation
+ * interface Robot {
+ *     // Returns true if the cell in front is open and robot moves into the cell.
+ *     // Returns false if the cell in front is blocked and robot stays in the current cell.
+ *     public boolean move();
+ *
+ *     // Robot will stay in the same cell after calling turnLeft/turnRight.
+ *     // Each turn will be 90 degrees.
+ *     public void turnLeft();
+ *     public void turnRight();
+ *
+ *     // Clean the current cell.
+ *     public void clean();
+ * }
+ */
+
 class Solution {
   // going clockwise : 0: 'up', 1: 'right', 2: 'down', 3: 'left'
   int[][] directions = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
