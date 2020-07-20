@@ -18,6 +18,10 @@ Given the root node of a binary search tree (BST) and a value. You need to find 
  *     }
  * }
  */
+
+// TC : O(h), that is O(N) in worst case and O(logn) in ideal case
+// SC: O(h), that is O(N) in worst case and O(logn) in ideal case
+
 class Solution {
     public TreeNode searchBST(TreeNode root, int val) {
         
