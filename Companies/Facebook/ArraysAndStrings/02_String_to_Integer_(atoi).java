@@ -49,28 +49,30 @@ class Solution {
     public int myAtoi(String str) {
         
         // check for invalid cases
-        if (str.isEmpty())
-            return 0;
-        if (str.trim().length() <= 0)
+        if(str == null || str.length() == 0)
             return 0;
         
-        int sign = 1, base = 0, i = 0;
         // discards whitespace characters until the first non-whitespace character is found
-        while (str.charAt(i) == ' ')
-            i++;
+        str = str.trim();
+        if(str.length() == 0)
+            return 0;
         
         // takes an optional initial plus or minus sign
-        if (str.charAt(i) == '-' || str.charAt(i) == '+')
-                sign = str.charAt(i++) == '-' ? -1 : 1;
+        int start = 0,sign = 1,base = 0;
+        if(str.charAt(start) == '-' || str.charAt(start) == '+'){
+            sign = (str.charAt(start) == '-' ? -1 : 1);
+            start++;
+        }
         
         // conversion from string to integer
-        while (i < str.length() && str.charAt(i) >= '0' && str.charAt(i) <= '9') {
-            if (base > Integer.MAX_VALUE / 10 || 
-                (base == Integer.MAX_VALUE / 10 && str.charAt(i) - '0' > 7)) {
-                    return (sign == 1) ? Integer.MAX_VALUE : Integer.MIN_VALUE;
+        while(start < str.length() && str.charAt(start) >= '0' && str.charAt(start) <= '9'){
+            if(base > Integer.MAX_VALUE/10 || 
+               (base == Integer.MAX_VALUE/10 && 
+                (str.charAt(start) - '0' > Integer.MAX_VALUE % 10))){
+                    return sign > 0 ? Integer.MAX_VALUE : Integer.MIN_VALUE;
             }
-            base = 10 * base + (str.charAt(i++) - '0');
+            base = base * 10 + (str.charAt(start++)-'0');
         }
-        return base * sign;
+        return base*sign;
     }
 }
