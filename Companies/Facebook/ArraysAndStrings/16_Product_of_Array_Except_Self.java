@@ -14,6 +14,8 @@ Follow up:
 Could you solve it with constant space complexity? (The output array does not count as extra space for the purpose of space complexity analysis.)
 */
 
+// https://leetcode.com/problems/product-of-array-except-self/discuss/65622/Simple-Java-solution-in-O(n)-without-extra-space
+
 class Solution {
     public int[] productExceptSelf(int[] nums) {
         int n = nums.length;
