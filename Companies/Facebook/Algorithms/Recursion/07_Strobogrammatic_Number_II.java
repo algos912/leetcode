@@ -12,6 +12,9 @@ Hint #1
 Try to use recursion and notice that it should recurse with n - 2 instead of n - 1.
 */
 
+// solution explanation
+// https://leetcode.com/problems/strobogrammatic-number-ii/discuss/138354/Logical-Thinking-with-Java-Code-Beats-100
+
 public class Solution {
     public List<String> findStrobogrammatic(int n) {
         
