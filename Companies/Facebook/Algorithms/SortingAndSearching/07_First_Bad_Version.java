@@ -47,3 +47,6 @@ public class Solution extends VersionControl {
         return -1;
     }
 }
+
+// learn Binary search template basics
+// https://leetcode.com/discuss/general-discussion/786126/python-powerful-ultimate-binary-search-template-solved-many-problems
