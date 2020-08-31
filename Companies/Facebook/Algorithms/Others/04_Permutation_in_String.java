@@ -23,7 +23,7 @@ The length of both given strings is in range [1, 10,000].
 
 // https://leetcode.com/problems/permutation-in-string/solution/
 // sorting
-// TC : O(l1)
+// TC : O(l1 log(l1) + (l2 - l1)l1 log(l1))
 // SC : O(l1)
 
 class Solution {
