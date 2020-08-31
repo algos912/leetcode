@@ -1,5 +1,7 @@
-// Second Highest Salary
 /*
+// Second Highest Salary
+// https://leetcode.com/problems/second-highest-salary/solution/
+
 Write a SQL query to get the second highest salary from the Employee table.
 
 +----+--------+
@@ -18,8 +20,6 @@ For example, given the above Employee table, the query should return 200 as the 
 +---------------------+
 
 */
-
-// https://leetcode.com/problems/second-highest-salary/solution/
 
 SELECT MAX(salary) AS SecondHighestSalary
 FROM Employee
