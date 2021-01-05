@@ -47,9 +47,9 @@ class Solution {
         // transpose matrix
         for (int i = 0; i < n; i++) {
             for (int j = i; j < n; j++) {
-                int tmp = matrix[j][i];
-                matrix[j][i] = matrix[i][j];
-                matrix[i][j] = tmp;
+                int tmp = matrix[i][j];
+                matrix[i][j] = matrix[j][i];
+                matrix[j][i] = tmp;
             }
         }
         
