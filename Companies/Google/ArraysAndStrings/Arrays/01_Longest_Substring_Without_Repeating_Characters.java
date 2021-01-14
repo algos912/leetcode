@@ -44,25 +44,26 @@ class Solution {
             return 0;
         
         HashSet<Character> set = new HashSet<Character>();
-        int length = 1;
-        int i = 0;
-        for(int j = 0; j < s.length(); j++) {
-            char c = s.charAt(j);
+        int length = 0;
+        int k = 0;
+        for(int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
             
-            // non repeating characters
+            //if new non repeating character
             if(!set.contains(c)) {
                 set.add(c);
-                length = Math.max(length,set.size());
+                length = Math.max(length, set.size());
             } else {
-                // clear set if repeating characters
-                while(i < j) {
-                    if(s.charAt(i) == c) {
-                        i++;
+                // repeating chars, clear set
+                while (k < i) {
+                    if(s.charAt(k) == c){
+                        k++;
                         break;
                     }
-                    set.remove(s.charAt(i));
-                    i++;
+                    set.remove(s.charAt(k));
+                    k++;
                 }
+                
             }
         }
         return length;
