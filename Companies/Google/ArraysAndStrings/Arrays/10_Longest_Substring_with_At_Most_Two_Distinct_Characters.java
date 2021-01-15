@@ -15,6 +15,10 @@ Output: 5
 Explanation: t is "aabbb" which its length is 5.
 */
 
+// sliding window
+// TC : O(N)
+// SC : O(1)
+
 class Solution {
     public int lengthOfLongestSubstringTwoDistinct(String s) {
         
