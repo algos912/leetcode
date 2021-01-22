@@ -40,6 +40,9 @@ targets.length == indexes.length
 sources[i] and targets[i] consist of only lowercase English letters.
 */
 
+// TC : O(NQ)
+// SC : O(N)
+
 class Solution {
     public String findReplaceString(String S, int[] indexes, String[] sources, String[] targets) {
         
